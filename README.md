@@ -327,6 +327,9 @@ server {
     location / {
             root /home/www/code/;
             index index.txt index.html;
+            if ($arg_ContentType = "html") {
+                add_header Content-Type "text/html; charset=utf-8";
+            }
     }
 }
 ```
